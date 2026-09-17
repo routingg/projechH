@@ -1,0 +1,41 @@
+# Python
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.vite/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Data
+backend/data/raw/
+backend/data/processed/
+data/
+vector_store/
+dataset/jeju_files/
+dataset/jeju_zips/
+dataset/jeju_extracted/
+dataset/jeju_download_summary.json
+jeju_accessibility_dataset_*.zip
+
+# 데모용 mock 데이터는 커밋 허용
+!backend/data/mock/
+
+# JDC 폴링 로그
+backend/jdc_poll.log
+
+# Local tooling artifacts
+.claude/
+.playwright-mcp/

@@ -1,0 +1,24 @@
+[
+  {
+    "store_id": "jdc_001",
+    "store_name": "JDC 면세점 화장품 매장 예시",
+    "location": "제주국제공항 JDC면세점 구역",
+    "category": "cosmetics",
+    "open_time": "06:00",
+    "close_time": "21:00",
+    "phone": "064-000-0000",
+    "source": "JDC 제주국제공항 면세점 매장정보 API",
+    "data_limit": "이 데이터는 JDC 면세점 매장정보 안내용입니다. 휠체어 대여, 수유실, 물품보관함 위치는 제공하지 않습니다."
+  },
+  {
+    "store_id": "jdc_002",
+    "store_name": "JDC 면세점 주류·담배 매장 예시",
+    "location": "제주국제공항 JDC면세점 구역",
+    "category": "liquor",
+    "open_time": "06:00",
+    "close_time": "21:00",
+    "phone": "064-000-0001",
+    "source": "JDC 제주국제공항 면세점 매장정보 API",
+    "data_limit": "이 데이터는 JDC 면세점 매장정보 안내용입니다. 휠체어 대여, 수유실, 물품보관함 위치는 제공하지 않습니다."
+  }
+]

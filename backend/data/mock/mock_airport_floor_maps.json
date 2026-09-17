@@ -1,0 +1,20 @@
+[
+  {
+    "floor": "1F",
+    "image_url": "/static/airport/jeju_airport_1f.png",
+    "description": "제주국제공항 1층 도면 이미지",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  },
+  {
+    "floor": "2F",
+    "image_url": "/static/airport/jeju_airport_2f.png",
+    "description": "제주국제공항 2층 도면 이미지",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  },
+  {
+    "floor": "3F",
+    "image_url": "/static/airport/jeju_airport_3f.png",
+    "description": "제주국제공항 3층 도면 이미지",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  }
+]

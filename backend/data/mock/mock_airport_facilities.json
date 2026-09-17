@@ -1,0 +1,29 @@
+[
+  {
+    "facility_id": "airport_facility_001",
+    "facility_name": "편의점 예시",
+    "terminal": "국내선",
+    "floor": "2F",
+    "category": "편의점",
+    "location_hint": "국내선 2층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_002",
+    "facility_name": "카페 예시",
+    "terminal": "국내선",
+    "floor": "2F",
+    "category": "카페",
+    "location_hint": "국내선 2층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_003",
+    "facility_name": "은행 예시",
+    "terminal": "국내선",
+    "floor": "1F",
+    "category": "은행",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  }
+]

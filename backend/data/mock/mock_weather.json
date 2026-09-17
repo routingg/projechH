@@ -1,0 +1,11 @@
+{
+  "area": "제주시",
+  "date": "2026-07-10",
+  "rain_probability": 70,
+  "rain_amount": 5,
+  "wind_speed": 9.5,
+  "temperature": 29,
+  "humidity": 78,
+  "weather_alert": "강풍 예비특보",
+  "heat_risk": "normal"
+}

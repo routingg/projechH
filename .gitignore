@@ -21,7 +21,11 @@ build/
 
 # Data
 backend/data/raw/
-backend/data/processed/
+backend/data/processed/*
+!backend/data/processed/jeju_places.json
+!backend/data/processed/place_accessibility.json
+!backend/data/processed/airport_facilities.json
+!backend/data/processed/airport_floor_maps.json
 vector_store/
 dataset/jeju_files/
 dataset/jeju_zips/
@@ -30,6 +34,9 @@ dataset/jeju_download_summary.json
 jeju_accessibility_dataset_*.zip
 
 # 데모용 mock 데이터(backend/data/mock/)는 위 규칙에 걸리지 않으므로 커밋 대상
+# 실데이터 스냅샷(jeju_places.json, place_accessibility.json)도 위와 동일하게 커밋 대상 —
+# Render 빌드가 fetch_jeju_places.py/enrich_places_accessibility.py를 실행하지 않으므로
+# 배포에는 생성된 JSON 스냅샷이 필요하다.
 
 # JDC 폴링 로그
 backend/jdc_poll.log

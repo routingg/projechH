@@ -1,0 +1,32 @@
+[
+  {
+    "floor": "1F",
+    "image_url": "/airport/jeju_airport_1f.svg",
+    "description": "제주국제공항 1층 도면",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  },
+  {
+    "floor": "2F",
+    "image_url": "/airport/jeju_airport_2f.svg",
+    "description": "제주국제공항 2층 도면",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  },
+  {
+    "floor": "3F",
+    "image_url": "/airport/jeju_airport_3f.svg",
+    "description": "제주국제공항 3층 도면",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  },
+  {
+    "floor": "4F",
+    "image_url": "/airport/jeju_airport_4f.svg",
+    "description": "제주국제공항 4층 도면",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  },
+  {
+    "floor": "2F",
+    "image_url": "/airport/jeju_airport_2f_dutyfree.png",
+    "description": "제주국제공항 2층 면세점 안내",
+    "source": "한국공항공사_제주국제공항 도면 이미지 정보"
+  }
+]

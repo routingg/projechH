@@ -1,0 +1,695 @@
+[
+  {
+    "facility_id": "airport_facility_001",
+    "facility_name": "국민은행(ATM)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_002",
+    "facility_name": "농협은행(ATM)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_003",
+    "facility_name": "신한은행(ATM)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_004",
+    "facility_name": "외환은행(ATM)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_005",
+    "facility_name": "제주은행",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_006",
+    "facility_name": "한국전자금융(ATM)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_007",
+    "facility_name": "공중전화",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "기타서비스",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_008",
+    "facility_name": "라운델(자전거토탈케어샵)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "기타서비스",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_009",
+    "facility_name": "와우패스",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "기타서비스",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_010",
+    "facility_name": "자치경찰단",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "기타서비스",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_011",
+    "facility_name": "달콤커피",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_012",
+    "facility_name": "돌랑돌랑 상점(카페)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_013",
+    "facility_name": "아워홈 푸디움",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_014",
+    "facility_name": "에그드랍",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_015",
+    "facility_name": "엔젤리너스",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_016",
+    "facility_name": "롯데렌터카",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_017",
+    "facility_name": "제주렌터카",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_018",
+    "facility_name": "탐라렌터카",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_019",
+    "facility_name": "우편취급국",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_020",
+    "facility_name": "유실물관리센터",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_021",
+    "facility_name": "제주관광협회 종합안내센터",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_022",
+    "facility_name": "제주올레",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_023",
+    "facility_name": "올리브영",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "판매",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_024",
+    "facility_name": "CU 편의점",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "판매",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_025",
+    "facility_name": "인생네컷",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "기타서비스",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_026",
+    "facility_name": "면세품 인도장(제주관광공사)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "면세점",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_027",
+    "facility_name": "JDC 면세점",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "면세점",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_028",
+    "facility_name": "국수나무",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_029",
+    "facility_name": "롯데리아",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_030",
+    "facility_name": "카페띠아모",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_031",
+    "facility_name": "카페오가다",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_032",
+    "facility_name": "파리바게트",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_033",
+    "facility_name": "플레이팅(푸드코트)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_034",
+    "facility_name": "세븐일레븐(편의점)",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "판매",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_035",
+    "facility_name": "특산품 판매점",
+    "terminal": "국내선",
+    "floor": "1층",
+    "category": "판매",
+    "location_hint": "국내선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_036",
+    "facility_name": "국민은행(ATM)",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_037",
+    "facility_name": "농협은행(ATM)",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_038",
+    "facility_name": "신한은행(ATM)",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_039",
+    "facility_name": "외환은행(ATM)",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_040",
+    "facility_name": "제주은행(ATM)",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_041",
+    "facility_name": "대한항공 라운지",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "라운지",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_042",
+    "facility_name": "아시아나항공 라운지",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "라운지",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_043",
+    "facility_name": "잠바주스",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_044",
+    "facility_name": "파리바게트",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_045",
+    "facility_name": "폴바셋",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_046",
+    "facility_name": "공항약국",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "판매",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_047",
+    "facility_name": "이제주섬",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "판매",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_048",
+    "facility_name": "특산품 판매점",
+    "terminal": "국내선",
+    "floor": "3층",
+    "category": "판매",
+    "location_hint": "국내선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_049",
+    "facility_name": "1950에어차이나",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_050",
+    "facility_name": "벨아벨",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_051",
+    "facility_name": "제주 향토음식점",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_052",
+    "facility_name": "진고복식당",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_053",
+    "facility_name": "카페오가다",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_054",
+    "facility_name": "퀴즈노스",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_055",
+    "facility_name": "플레이팅(푸드코트)",
+    "terminal": "국내선",
+    "floor": "4층",
+    "category": "식음료",
+    "location_hint": "국내선 4층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_056",
+    "facility_name": "신한은행(환전소)",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_057",
+    "facility_name": "제주은행(환전소)",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "금융",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_058",
+    "facility_name": "롯데관광개발(안내카운터)",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_059",
+    "facility_name": "수화물보관소",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_060",
+    "facility_name": "유실물관리센터",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_061",
+    "facility_name": "제주특별자치도관광협회",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_062",
+    "facility_name": "파라다이스 카지노(안내카운터)",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_063",
+    "facility_name": "SK텔레콤(로밍카운터)",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "안내",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_064",
+    "facility_name": "빌라드샬롯",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_065",
+    "facility_name": "디자인스킨",
+    "terminal": "국제선",
+    "floor": "1층",
+    "category": "판매",
+    "location_hint": "국제선 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_066",
+    "facility_name": "글로벌텍스프리",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_067",
+    "facility_name": "제주은행(환전소)",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "금융",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_068",
+    "facility_name": "롯데면세점",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "면세점",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_069",
+    "facility_name": "면세품 인도장",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "면세점",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_070",
+    "facility_name": "SK텔레콤(로밍카운터)",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "안내",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_071",
+    "facility_name": "아워당",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_072",
+    "facility_name": "아시안쿡",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_073",
+    "facility_name": "띠아모",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_074",
+    "facility_name": "브레댄코",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "식음료",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_075",
+    "facility_name": "특산품 판매점",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "판매",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_076",
+    "facility_name": "CU 편의점",
+    "terminal": "국제선",
+    "floor": "3층",
+    "category": "판매",
+    "location_hint": "국제선 3층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  },
+  {
+    "facility_id": "airport_facility_077",
+    "facility_name": "파리바게트",
+    "terminal": "렌트카하우스",
+    "floor": "1층",
+    "category": "식음료",
+    "location_hint": "렌트카하우스 1층",
+    "source": "한국공항공사_제주공항 층별 입점업체 현황"
+  }
+]

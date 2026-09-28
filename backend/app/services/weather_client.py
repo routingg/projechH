@@ -54,7 +54,8 @@ def fetch_forecast() -> dict:
     r = requests.get(
         s.kma_forecast_url,
         params={
-            "serviceKey": s.kma_api_key,
+            # 기상청 API허브(apihub.kma.go.kr)는 authKey 파라미터를 사용한다 (data.go.kr의 serviceKey와 다름)
+            "authKey": s.kma_api_key,
             "pageNo": 1,
             "numOfRows": 800,
             "dataType": "JSON",

@@ -29,9 +29,9 @@ class Settings(BaseSettings):
     jdc_api_url: str = "https://apis.data.go.kr/B551391/jdcdutyfreeshops/brand"
     public_api_timeout_seconds: float = 10.0
 
-    # 기상청(1360000) — 단기예보 + 기상특보. serviceKey 는 위 인증키 공용.
+    # 기상청 API허브 — 단기예보(authKey 인증). 기상특보는 아래 data.go.kr 별도 키 필요.
     kma_forecast_url: str = (
-        "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst"
+        "https://apihub.kma.go.kr/api/typ02/openApi/VilageFcstInfoService_2.0/getVilageFcst"
     )
     kma_alert_url: str = (
         "https://apis.data.go.kr/1360000/WthrWrnInfoService/getWthrWrnList"

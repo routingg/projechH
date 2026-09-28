@@ -61,10 +61,12 @@ export default function PlaceCard({
     (b) => !matchReason.some((m) => b.startsWith(m.slice(0, 40)))
   );
 
-  const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
   const rawImg = rec.image_urls?.[0];
-  // 제주 GIS 이미지는 인증서 문제로 백엔드 프록시를 통해 로드
-  const heroImg = rawImg ? `${API_BASE}/api/image?url=${encodeURIComponent(rawImg)}` : undefined;
+  // 제주 GIS 로드뷰 사진은 scripts/download_place_images.py 로 미리 받아
+  // frontend/public 에 정적 파일로 저장해 둔다 (원본 도메인 인증서 문제 +
+  // Render 무료 플랜 cold-start로 인한 프록시 502/503을 피하기 위함).
+  // 원본 URL의 도메인 이후 경로를 그대로 정적 파일 경로로 사용한다.
+  const heroImg = rawImg ? new URL(rawImg).pathname : undefined;
 
   return (
     <div

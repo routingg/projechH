@@ -21,6 +21,12 @@ function scoreColor(level: Recommendation["recommendation_level"]): string {
   return "text-red-500";
 }
 
+const LEVEL_BAR_COLOR: Record<Recommendation["recommendation_level"], string> = {
+  recommended: "bg-green-500",
+  conditional: "bg-amber-500",
+  not_recommended: "bg-red-500",
+};
+
 function MiniBar({ label, value, inverted = false }: { label: string; value: number; inverted?: boolean }) {
   const good = inverted ? value <= 30 : value >= 60;
   return (
@@ -41,10 +47,12 @@ export default function PlaceCard({
   rec,
   actionSlot,
   selected = false,
+  animationDelayMs = 0,
 }: {
   rec: Recommendation;
   actionSlot?: ReactNode; // 담기 버튼 등 외부 주입 액션
   selected?: boolean; // 지도 마커 선택과 연동된 하이라이트
+  animationDelayMs?: number; // 목록에 순차적으로 나타나는 효과용
 }) {
   const warnings = rec.warnings.filter((w) => !w.startsWith("본 추천은 참고 정보"));
   const matchReason = rec.match_reason ?? [];
@@ -60,27 +68,52 @@ export default function PlaceCard({
 
   return (
     <div
-      className={`bg-white rounded-2xl border mb-3 shadow-[var(--shadow-soft)] overflow-hidden transition-shadow ${
+      style={{ animationDelay: `${animationDelayMs}ms` }}
+      className={`animate-fade-in-up bg-white rounded-2xl border mb-3 shadow-[var(--shadow-soft)] overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] ${
         selected ? "border-brand-400 ring-2 ring-brand-300" : "border-brand-100"
       }`}
     >
-      {heroImg && (
-        <img
-          src={heroImg}
-          alt={`${rec.name} 로드뷰`}
-          loading="lazy"
-          className="w-full h-40 object-cover bg-stone-100"
-          onError={(e) => {
-            e.currentTarget.style.display = "none";
-          }}
-        />
-      )}
-      <div className="p-5">
-      <div className="flex items-start justify-between gap-3">
-        <div>
+      <div aria-hidden className={`h-1 ${LEVEL_BAR_COLOR[rec.recommendation_level]}`} />
+      {/* 데스크톱: 이미지 좌측 고정폭 + 정보 우측 / 모바일: 이미지 상단 전체폭 */}
+      <div className="sm:flex sm:items-stretch">
+        <div className="relative shrink-0 w-full h-40 sm:w-52 sm:h-auto">
+          {heroImg ? (
+            <img
+              src={heroImg}
+              alt={`${rec.name} 로드뷰`}
+              loading="lazy"
+              className="w-full h-full object-cover bg-stone-100"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+                e.currentTarget.parentElement
+                  ?.querySelector("[data-img-fallback]")
+                  ?.classList.remove("hidden");
+              }}
+            />
+          ) : null}
+          <div
+            data-img-fallback
+            className={`w-full h-full grid place-items-center bg-gradient-to-br from-brand-50 to-sea-50 text-4xl ${
+              heroImg ? "hidden" : ""
+            }`}
+            aria-hidden
+          >
+            {rec.category === "indoor" ? "🏛" : "🌿"}
+          </div>
+          {/* 접근성 판단 결과 — 사진보다 먼저 읽히도록 오버레이로 표시 */}
+          <div className="absolute inset-x-2 top-2 flex items-start justify-between gap-2">
+            <ScoreBadge level={rec.recommendation_level} />
+            <span
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/95 shadow-sm text-xs font-extrabold ${scoreColor(rec.recommendation_level)}`}
+            >
+              {rec.mobility_feasibility_score}점
+            </span>
+          </div>
+        </div>
+        <div className="p-5 flex-1 min-w-0">
+      <div>
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="m-0 text-lg font-bold text-stone-800">{rec.name}</h3>
-            <ScoreBadge level={rec.recommendation_level} />
             {rec.relevance_score != null && (
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-sea-50 text-sea-600 border border-sea-100 font-bold">
                 질문 관련도 {rec.relevance_score}%
@@ -91,13 +124,6 @@ export default function PlaceCard({
             {rec.category === "indoor" ? "🏛 실내" : "🌿 실외"}
             {rec.address ? ` · ${rec.address}` : ""}
           </p>
-        </div>
-        <div className="text-right shrink-0">
-          <div className={`text-3xl font-extrabold leading-none ${scoreColor(rec.recommendation_level)}`}>
-            {rec.mobility_feasibility_score}
-          </div>
-          <div className="text-[10px] text-stone-400 mt-1">이동가능성</div>
-        </div>
       </div>
 
       {/* 사실 칩 — 정보 없음(?)도 그대로 표기 */}
@@ -161,6 +187,7 @@ export default function PlaceCard({
       </details>
 
       {actionSlot && <div className="mt-3">{actionSlot}</div>}
+      </div>
       </div>
     </div>
   );

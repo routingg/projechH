@@ -19,7 +19,7 @@ export default function App() {
         본문으로 건너뛰기
       </a>
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-brand-100">
-        <div className="max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-6 h-16">
+        <div className="max-w-[1320px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
           <NavLink to="/" end className="flex items-center gap-2 no-underline">
             <span className="grid place-items-center w-8 h-8 rounded-xl bg-brand-500 text-white text-lg shadow-sm">
               ♿
@@ -49,7 +49,7 @@ export default function App() {
         </div>
       </header>
 
-      <main id="main" className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      <main id="main" className="flex-1 w-full max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/planner" element={<PlannerPage />} />

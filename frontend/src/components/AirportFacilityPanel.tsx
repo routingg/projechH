@@ -23,7 +23,7 @@ export default function AirportFacilityPanel({
       <p className="text-xs text-stone-400 mt-0 mb-3">
         출도 전 이용할 수 있는 공항 내 시설이에요.
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {facilities.map((f, i) => (
           <div
             key={i}

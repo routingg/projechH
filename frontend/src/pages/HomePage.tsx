@@ -25,6 +25,14 @@ const ROUTE_STEPS = [
   },
 ];
 
+// 함께 보는 데이터 — 서비스가 실제로 결합하는 공공데이터 (허구 수치 없음)
+const STATS = [
+  { icon: "🏝", label: "제주 관광지", value: "154곳" },
+  { icon: "🧾", label: "무장애 실측 정보", value: "1,102건" },
+  { icon: "🌦", label: "기상청 예보·특보", value: "실시간" },
+  { icon: "✈", label: "제주공항 도면", value: "1–4층" },
+];
+
 // 장소마다 확인하는 것 — 서비스의 실제 판단 기준
 const CHECKS = [
   {
@@ -43,12 +51,18 @@ const CHECKS = [
 
 export default function HomePage() {
   return (
-    <div className="-mt-8 -mx-4 sm:-mx-6">
-      {/* 히어로 — 안내서 표지처럼: 왼쪽은 약속, 오른쪽은 실제 표기 예시 */}
-      <section className="px-4 sm:px-6 pt-14 pb-12 border-b border-brand-100">
-        <div className="max-w-5xl mx-auto grid gap-10 lg:grid-cols-[1fr_minmax(0,23rem)] lg:gap-14 items-center">
+    <div className="-mt-8 -mx-4 sm:-mx-6 lg:-mx-8">
+      {/* 히어로 — 안내서 표지처럼: 왼쪽은 약속, 오른쪽은 실제 표기 예시. 데스크톱은 넓은 2열 */}
+      <section className="px-4 sm:px-6 lg:px-8 pt-14 pb-12 border-b border-brand-100">
+        <div className="max-w-[1320px] mx-auto grid gap-10 lg:grid-cols-[1fr_28rem] xl:grid-cols-[1fr_31rem] lg:gap-16 items-center">
           <div>
-            <p className="m-0 text-base sm:text-lg font-bold text-brand-700 tracking-wide">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200">
+              <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-500" />
+              <span className="text-xs sm:text-sm font-bold text-brand-700 tracking-wide">
+                AI × 공공데이터 기반 무장애 여행
+              </span>
+            </div>
+            <p className="m-0 mt-3 text-base sm:text-lg font-bold text-stone-500">
               휠체어 이용자를 위한 제주 여행 플래너
             </p>
             <h1 className="font-display text-[2.6rem] leading-[1.25] sm:text-6xl sm:leading-[1.2] font-bold text-stone-900 mt-4 mb-0">
@@ -83,10 +97,13 @@ export default function HomePage() {
 
           {/* 실데이터 표기 예시 — 서비스가 보여주는 방식 그대로 (제주도립미술관 실제 값) */}
           <aside aria-label="정보 표기 방식 예시">
-            <div className="bg-white rounded-2xl border-2 border-stone-200 shadow-[var(--shadow-soft)] p-6">
-              <p className="m-0 text-sm font-bold text-stone-500 tracking-wide">
-                이렇게 표시해 드려요 — 실제 데이터 예시
-              </p>
+            <div className="bg-white rounded-2xl border-2 border-stone-200 shadow-[var(--shadow-lift)] p-6 lg:p-7">
+              <div className="flex items-center justify-between gap-2">
+                <p className="m-0 text-sm font-bold text-stone-500 tracking-wide">
+                  이렇게 표시해 드려요 — 실제 데이터 예시
+                </p>
+                <span aria-hidden className="text-lg">🗺️</span>
+              </div>
               <div className="mt-3 flex items-center justify-between gap-3">
                 <strong className="text-xl text-stone-900">제주도립미술관</strong>
                 <span className="shrink-0 px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-bold">
@@ -111,7 +128,13 @@ export default function HomePage() {
                   경사 구간 <strong>7˚ · 44m</strong> 실측 기록
                 </li>
               </ul>
-              <p className="m-0 mt-4 pt-3 border-t border-stone-100 text-sm text-stone-500 leading-relaxed">
+              <div className="mt-4 pt-3 border-t border-stone-100 flex items-center gap-3 text-[11px] font-semibold text-stone-400">
+                <span>🟢 추천</span>
+                <span>🟠 조건부</span>
+                <span>🔴 비추천</span>
+                <span className="ml-auto text-brand-500">지도에서 한눈에 확인 →</span>
+              </div>
+              <p className="m-0 mt-2 text-sm text-stone-500 leading-relaxed">
                 확인 안 된 시설은 <strong className="text-stone-700">? 정보 없음</strong>으로
                 구분합니다. 출처: 제주데이터허브 무장애여행정보
               </p>
@@ -119,74 +142,90 @@ export default function HomePage() {
           </aside>
         </div>
 
-        {/* 함께 보는 데이터 — 문장으로 (타일 아님) */}
-        <p className="max-w-5xl mx-auto mt-10 mb-0 pt-6 border-t border-brand-100 text-base text-stone-600 leading-relaxed">
-          함께 보는 데이터 — 제주 관광지{" "}
-          <strong className="text-stone-900">154곳</strong> · 무장애 실측 정보{" "}
-          <strong className="text-stone-900">1,102건</strong> · 기상청{" "}
-          <strong className="text-stone-900">실시간 예보·특보</strong> · 제주공항 도면{" "}
-          <strong className="text-stone-900">1–4층</strong>
-        </p>
-      </section>
-
-      {/* 이용 흐름 — 플래너 지도의 동선(점선)을 그대로 가져온 시그니처 */}
-      <section id="how" className="px-4 sm:px-6 py-14 scroll-mt-20">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-stone-900 m-0">
-            지도의 동선처럼, 네 걸음
-          </h2>
-          <p className="mt-3 mb-0 text-lg text-stone-600">
-            플래너 지도에 그려지는 경로 그대로 — 관광지에서 공항까지.
+        {/* 함께 보는 데이터 — 서비스 성과로 읽히는 가로형 지표 (숫자 보고서 아님) */}
+        <div className="max-w-[1320px] mx-auto mt-10 pt-6 border-t border-brand-100">
+          <p className="m-0 mb-3 text-xs font-bold text-stone-400 tracking-wide">
+            함께 보는 데이터 — 서비스가 결합하는 공공데이터
           </p>
-          <ol className="relative list-none m-0 mt-10 p-0">
-            {/* 동선 점선 — 지도 위 경로선과 같은 주황 점선 */}
-            <div
-              aria-hidden
-              className="absolute left-[23px] top-6 bottom-10 border-l-[3px] border-dashed border-brand-300"
-            />
-            {ROUTE_STEPS.map((s) => (
-              <li key={s.title} className="relative flex gap-5 pb-9 last:pb-0">
-                <span
-                  aria-hidden
-                  className={`relative z-10 grid place-items-center w-12 h-12 shrink-0 rounded-full text-white text-lg font-extrabold border-4 border-[#fdfaf7] ${
-                    s.isAirport ? "bg-sea-700" : "bg-brand-700"
-                  }`}
-                >
-                  {s.pin}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {STATS.map((s) => (
+              <div
+                key={s.label}
+                className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-brand-100 bg-white"
+              >
+                <span aria-hidden className="text-xl leading-none">
+                  {s.icon}
                 </span>
-                <div className="pt-1">
-                  <h3 className="m-0 text-xl font-bold text-stone-900">{s.title}</h3>
-                  <p className="mt-1.5 mb-0 text-base sm:text-lg text-stone-600 leading-relaxed">
-                    {s.desc}
-                  </p>
+                <div>
+                  <div className="text-base font-extrabold text-stone-900 leading-tight">
+                    {s.value}
+                  </div>
+                  <div className="text-[11px] text-stone-400 leading-tight">{s.label}</div>
                 </div>
-              </li>
+              </div>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
-      {/* 장소마다 확인하는 것 — 키라인 목록 */}
-      <section className="px-4 sm:px-6 pb-14">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-stone-900 m-0">
-            장소마다 이런 것을 확인합니다
-          </h2>
-          <dl className="m-0 mt-8 space-y-6">
-            {CHECKS.map((c) => (
-              <div key={c.term} className="border-l-4 border-brand-300 pl-5 py-1">
-                <dt className="text-xl font-bold text-stone-900">{c.term}</dt>
-                <dd className="m-0 mt-1.5 text-base sm:text-lg text-stone-600 leading-relaxed">
-                  {c.desc}
-                </dd>
-              </div>
-            ))}
-          </dl>
+      {/* 이용 흐름 + 판단 기준 — 데스크톱은 좌우 2열로 나란히 비교, 모바일은 세로 */}
+      <section id="how" className="px-4 sm:px-6 lg:px-8 py-14 scroll-mt-20">
+        <div className="max-w-[1320px] mx-auto grid gap-14 lg:grid-cols-2 lg:gap-20 lg:items-start">
+          <div>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-stone-900 m-0">
+              지도의 동선처럼, 네 걸음
+            </h2>
+            <p className="mt-3 mb-0 text-lg text-stone-600">
+              플래너 지도에 그려지는 경로 그대로 — 관광지에서 공항까지.
+            </p>
+            <ol className="relative list-none m-0 mt-10 p-0">
+              {/* 동선 점선 — 지도 위 경로선과 같은 주황 점선 */}
+              <div
+                aria-hidden
+                className="absolute left-[23px] top-6 bottom-10 border-l-[3px] border-dashed border-brand-300"
+              />
+              {ROUTE_STEPS.map((s) => (
+                <li key={s.title} className="relative flex gap-5 pb-9 last:pb-0">
+                  <span
+                    aria-hidden
+                    className={`relative z-10 grid place-items-center w-12 h-12 shrink-0 rounded-full text-white text-lg font-extrabold border-4 border-[#fdfaf7] ${
+                      s.isAirport ? "bg-sea-700" : "bg-brand-700"
+                    }`}
+                  >
+                    {s.pin}
+                  </span>
+                  <div className="pt-1">
+                    <h3 className="m-0 text-xl font-bold text-stone-900">{s.title}</h3>
+                    <p className="mt-1.5 mb-0 text-base sm:text-lg text-stone-600 leading-relaxed">
+                      {s.desc}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* 장소마다 확인하는 것 — 키라인 목록 */}
+          <div className="lg:pt-1">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-stone-900 m-0">
+              장소마다 이런 것을 확인합니다
+            </h2>
+            <dl className="m-0 mt-8 space-y-6">
+              {CHECKS.map((c) => (
+                <div key={c.term} className="border-l-4 border-brand-300 pl-5 py-1">
+                  <dt className="text-xl font-bold text-stone-900">{c.term}</dt>
+                  <dd className="m-0 mt-1.5 text-base sm:text-lg text-stone-600 leading-relaxed">
+                    {c.desc}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
       {/* 마감 CTA — 현무암 먹색 단면 (그라데이션 없음) */}
-      <section className="px-4 sm:px-6 pb-6">
+      <section className="px-4 sm:px-6 lg:px-8 pb-6">
         <div className="max-w-3xl mx-auto rounded-3xl bg-stone-900 px-6 sm:px-10 py-12 text-center">
           <h2 className="font-display m-0 text-3xl sm:text-4xl font-bold text-white leading-snug">
             오늘 갈 수 있는 곳,

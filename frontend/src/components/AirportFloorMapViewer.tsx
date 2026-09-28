@@ -85,7 +85,7 @@ export default function AirportFloorMapViewer({ floorMaps }: { floorMaps: FloorM
       </div>
 
       {/* 도면 (스크롤로 팬) */}
-      <div className="w-full h-96 overflow-auto rounded-2xl border border-brand-100 bg-white grid place-items-center">
+      <div className="w-full h-96 lg:h-[30rem] overflow-auto rounded-2xl border border-brand-100 bg-white grid place-items-center">
         <img
           src={current.image_url}
           alt={current.description}

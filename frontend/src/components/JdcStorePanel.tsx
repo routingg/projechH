@@ -102,7 +102,7 @@ export default function JdcStorePanel({
 
       <p className="text-xs text-stone-400 mb-2">{filtered.length}개 매장</p>
 
-      <div className="grid sm:grid-cols-2 gap-3">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map((s, i) => (
           <div
             key={i}

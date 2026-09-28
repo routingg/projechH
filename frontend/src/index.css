@@ -45,6 +45,36 @@ summary::-webkit-details-marker {
   outline-offset: 3px;
 }
 
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out both;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f4f0ec 25%, #ffffff 50%, #f4f0ec 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
 /* 시스템에서 '움직임 줄이기'를 켠 경우 전환·애니메이션 제거 */
 @media (prefers-reduced-motion: reduce) {
   *,

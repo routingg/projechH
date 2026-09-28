@@ -43,6 +43,26 @@ function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function PlaceCardSkeleton() {
+  return (
+    <div className="bg-white rounded-2xl border border-brand-100 mb-3 shadow-[var(--shadow-soft)] overflow-hidden">
+      <div className="w-full h-40 animate-shimmer" />
+      <div className="p-5 space-y-3">
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-32 rounded-md animate-shimmer" />
+          <div className="h-5 w-14 rounded-full animate-shimmer" />
+        </div>
+        <div className="h-3 w-24 rounded animate-shimmer" />
+        <div className="flex gap-1.5">
+          <div className="h-6 w-16 rounded-lg animate-shimmer" />
+          <div className="h-6 w-16 rounded-lg animate-shimmer" />
+          <div className="h-6 w-20 rounded-lg animate-shimmer" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function PlannerPage() {
   const [conditions, setConditions] = useState<PlannerValue | null>(null);
   const [recs, setRecs] = useState<Recommendation[] | null>(null);
@@ -221,72 +241,115 @@ export default function PlannerPage() {
         </div>
       )}
 
-      {/* ② 지도 추천 */}
-      {recs && recs.length > 0 && (
-        <section id="step-recs" className="scroll-mt-28">
-          {conditions?.query && (
-            <p className="text-xs text-stone-500 mb-2">
-              {queryApplied ? (
-                <>
-                  🔍 "<span className="font-semibold">{conditions.query}</span>" 와 관련된 무장애
-                  정보를 랭킹에 반영했어요.
-                </>
-              ) : (
-                <>질문과 직접 관련된 무장애 문서를 찾지 못해 기본 순위로 보여드려요.</>
-              )}
-            </p>
-          )}
-
-          <PlaceMap
-            markers={toMarkers(top)}
-            showLegend
-            height="26rem"
-            selectedId={selectedId}
-            onMarkerClick={focusPlace}
-          />
-
-          <p className="text-xs text-stone-400 mb-2 mt-3">
-            총 {recs.length}곳 중 상위 {top.length}곳 · 마음에 드는 곳을 "코스에 담기"로
-            모아 일정을 만들 수 있어요
+      {/* 추천 계산 중 — 지도·카드 자리에 스켈레톤으로 진행 상태 표시 */}
+      {loading && (
+        <section aria-live="polite" aria-busy="true">
+          <div className="w-full h-[26rem] rounded-2xl animate-shimmer mb-3" />
+          <p className="text-xs text-stone-400 mb-2">
+            오늘 조건에 맞춰 제주 관광지를 살펴보는 중이에요…
           </p>
-
-          {top.map((rec) => (
-            <div
-              key={rec.place_id}
-              ref={(el) => {
-                cardRefs.current[rec.place_id] = el;
-              }}
-              onClick={() => setSelectedId(rec.place_id)}
-            >
-              <PlaceCard
-                rec={rec}
-                selected={selectedId === rec.place_id}
-                actionSlot={
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleCart(rec);
-                    }}
-                    className={`w-full sm:w-auto px-4 py-2 rounded-xl text-sm font-bold border transition-colors cursor-pointer ${
-                      inCart(rec.place_id)
-                        ? "bg-sea-500 border-sea-500 text-white hover:bg-sea-600"
-                        : "bg-white border-brand-300 text-brand-600 hover:bg-brand-50"
-                    }`}
-                  >
-                    {inCart(rec.place_id) ? "✓ 코스에 담김 (누르면 빼기)" : "➕ 코스에 담기"}
-                  </button>
-                }
-              />
-            </div>
+          {Array.from({ length: 4 }).map((_, i) => (
+            <PlaceCardSkeleton key={i} />
           ))}
+        </section>
+      )}
 
-          {rag && <RagExplanationBox rag={rag} />}
+      {/* ② 지도 추천 — 데스크톱: 결과 리스트 | 지도(스티키) 2열 대시보드 / 모바일: 지도 → 리스트 */}
+      {!loading && recs && recs.length > 0 && (
+        <section
+          id="step-recs"
+          className="scroll-mt-28 lg:grid lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-6 lg:items-start"
+        >
+          <div className="lg:order-2 lg:sticky lg:top-24">
+            <PlaceMap
+              markers={toMarkers(top)}
+              showLegend
+              height="26rem"
+              selectedId={selectedId}
+              onMarkerClick={focusPlace}
+            />
+          </div>
 
-          <p className="text-xs text-stone-400 mt-4">
-            ※ 본 추천은 참고 정보이며 휠체어 접근 가능성이나 안전을 보장하지 않습니다. 확인되지
-            않은 정보는 "정보 없음"으로 표시됩니다.
-          </p>
+          <div className="lg:order-1 min-w-0">
+            {conditions?.query && (
+              <p className="text-xs text-stone-500 mb-2 mt-3 lg:mt-0">
+                {queryApplied ? (
+                  <>
+                    🔍 "<span className="font-semibold">{conditions.query}</span>" 와 관련된 무장애
+                    정보를 랭킹에 반영했어요.
+                  </>
+                ) : (
+                  <>질문과 직접 관련된 무장애 문서를 찾지 못해 기본 순위로 보여드려요.</>
+                )}
+              </p>
+            )}
+
+            <p className="text-xs text-stone-400 mb-2 mt-3 lg:mt-0">
+              총 {recs.length}곳 중 상위 {top.length}곳 · 마음에 드는 곳을 "코스에 담기"로
+              모아 일정을 만들 수 있어요
+            </p>
+
+            {top.map((rec, i) => (
+              <div
+                key={rec.place_id}
+                ref={(el) => {
+                  cardRefs.current[rec.place_id] = el;
+                }}
+                onClick={() => setSelectedId(rec.place_id)}
+              >
+                <PlaceCard
+                  rec={rec}
+                  selected={selectedId === rec.place_id}
+                  animationDelayMs={Math.min(i, 8) * 40}
+                  actionSlot={
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleCart(rec);
+                      }}
+                      className={`w-full sm:w-auto px-4 py-2 rounded-xl text-sm font-bold border transition-colors cursor-pointer ${
+                        inCart(rec.place_id)
+                          ? "bg-sea-500 border-sea-500 text-white hover:bg-sea-600"
+                          : "bg-white border-brand-300 text-brand-600 hover:bg-brand-50"
+                      }`}
+                    >
+                      {inCart(rec.place_id) ? "✓ 코스에 담김 (누르면 빼기)" : "➕ 코스에 담기"}
+                    </button>
+                  }
+                />
+              </div>
+            ))}
+
+            {rag && <RagExplanationBox rag={rag} />}
+
+            <p className="text-xs text-stone-400 mt-4">
+              ※ 본 추천은 참고 정보이며 휠체어 접근 가능성이나 안전을 보장하지 않습니다. 확인되지
+              않은 정보는 "정보 없음"으로 표시됩니다.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ② 결과 없음 — 빈 상태도 다음 행동을 제안 */}
+      {!loading && recs && recs.length === 0 && (
+        <section id="step-recs" className="scroll-mt-28">
+          <div className="rounded-2xl border border-brand-100 bg-white p-8 sm:p-10 text-center">
+            <p className="m-0 text-base font-bold text-stone-700">
+              조건에 맞는 장소를 찾지 못했어요.
+            </p>
+            <p className="m-0 mt-2 text-sm text-stone-500 leading-relaxed max-w-md mx-auto">
+              조건을 조금 완화하면 갈 수 있는 장소를 더 찾을 수 있어요. 질문을 지우거나 날씨
+              민감도·선호 유형을 조정해 다시 시도해 보세요.
+            </p>
+            <button
+              type="button"
+              onClick={() => scrollToId("step-conditions")}
+              className="mt-5 px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm transition-colors cursor-pointer"
+            >
+              조건 수정하기
+            </button>
+          </div>
         </section>
       )}
 
@@ -297,25 +360,27 @@ export default function PlannerPage() {
             ③ 담은 코스 {cart.length > 0 ? `${cart.length}곳` : ""}
           </h2>
           {cart.length > 0 ? (
-            <>
-              <PlaceMap
-                markers={courseMarkers}
-                connect
-                routePath={courseRoute?.source === "kakao" ? courseRoute.path : undefined}
-                showAirport
-                height="20rem"
-              />
-              <p className="text-[11px] text-stone-400 mt-1 mb-3">
-                숫자 = 담은 순서 · ✈ = 공항
-                {courseRoute?.source === "kakao" && courseRoute.distance_m != null && (
-                  <span className="text-brand-500 font-semibold">
-                    {" "}
-                    · 총 이동 {(courseRoute.distance_m / 1000).toFixed(1)}km ·{" "}
-                    {Math.round((courseRoute.duration_s ?? 0) / 60)}분 (실도로)
-                  </span>
-                )}
-              </p>
-              <ol className="m-0 mb-3 pl-0 list-none space-y-1.5">
+            <div className="lg:flex lg:gap-6 lg:items-start mb-3">
+              <div className="lg:w-[26rem] lg:shrink-0">
+                <PlaceMap
+                  markers={courseMarkers}
+                  connect
+                  routePath={courseRoute?.source === "kakao" ? courseRoute.path : undefined}
+                  showAirport
+                  height="20rem"
+                />
+                <p className="text-[11px] text-stone-400 mt-1">
+                  숫자 = 담은 순서 · ✈ = 공항
+                  {courseRoute?.source === "kakao" && courseRoute.distance_m != null && (
+                    <span className="text-brand-500 font-semibold">
+                      {" "}
+                      · 총 이동 {(courseRoute.distance_m / 1000).toFixed(1)}km ·{" "}
+                      {Math.round((courseRoute.duration_s ?? 0) / 60)}분 (실도로)
+                    </span>
+                  )}
+                </p>
+              </div>
+              <ol className="m-0 mt-3 lg:mt-0 pl-0 list-none space-y-1.5 flex-1 min-w-0">
                 {cart.map((c, i) => (
                   <li
                     key={c.place_id}
@@ -337,7 +402,7 @@ export default function PlannerPage() {
                   </li>
                 ))}
               </ol>
-            </>
+            </div>
           ) : (
             <p className="text-sm text-stone-400 mb-3">
               아직 담은 곳이 없어요. 담지 않고 일정을 만들면 오늘 조건에 맞춰 자동으로

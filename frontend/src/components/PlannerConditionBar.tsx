@@ -100,7 +100,7 @@ export default function PlannerConditionBar({
         <span className="text-xs font-bold text-stone-500">
           어떤 상황인지, 어떤 곳에 가고 싶은지 편하게 적어주세요
         </span>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <textarea
             rows={2}
             value={query}
@@ -111,7 +111,7 @@ export default function PlannerConditionBar({
           <button
             type="submit"
             disabled={loading}
-            className="px-5 rounded-xl bg-brand-500 hover:bg-brand-600 disabled:opacity-60 text-white font-bold text-sm transition-colors cursor-pointer shrink-0"
+            className="w-full sm:w-auto px-5 py-3 sm:py-0 rounded-xl bg-brand-500 hover:bg-brand-600 disabled:opacity-60 text-white font-bold text-sm transition-colors cursor-pointer shrink-0"
           >
             {loading ? "분석 중…" : "추천 받기"}
           </button>
